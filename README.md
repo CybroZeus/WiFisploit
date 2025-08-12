@@ -44,6 +44,6 @@ The developer is not responsible for misuse.
 
 ## 📢 Join Us on Telegram
 
-- 👤 [My Telegram](https://t.me/CybrZeus)
+- 👤 [My Telegram](https://t.me/CybroZeus)
 - 📣 [Channel](https://t.me/wannacryzero)
 - 💬 [Group Chat](https://t.me/wannacry000)
