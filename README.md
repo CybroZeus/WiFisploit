@@ -41,3 +41,9 @@ python3 wsf.py
 This tool is for educational purposes and authorized penetration testing only.
 Do not use on networks you don't own or have permission to test.
 The developer is not responsible for misuse.
+
+## 📢 Join Us on Telegram
+
+- 👤 [My Telegram](https://t.me/CybrZeus)
+- 📣 [Channel](https://t.me/wannacryzero)
+- 💬 [Group Chat](https://t.me/wannacry000)
