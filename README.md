@@ -1,72 +1,43 @@
-# WiFisploit
-WiFisploit is a Python-based tool designed for Wi-Fi network penetration testing and security auditing. It provides a variety of functionalities to scan for WiFi networks, test their vulnerabilities, and perform attacks like deauthentication and password brute forcing. This tool is intended for educational and authorized security testing purposes only.
+# WiFisploit - Wireless Hacking Framework
 
-Features
-Scan available WiFi networks.
+**WiFisploit** is a powerful Python-based tool for **Wi-Fi network penetration testing** and **security auditing**.
+It offers a set of modules to **scan**, **analyze**, and **attack** wireless networks in both offensive and defensive security contexts.
 
-Attempt to connect to targeted networks.
+⚠️ Use this tool **only for educational purposes** and with **explicit authorization**.
 
-Perform deauthentication attacks to disconnect clients.
+---
 
-Brute force WiFi passwords.
+## 🧩 Features
 
-Simple command-line interface for ease of use.
+- 🔐 Brute Force Wi-Fi passwords (WPA/WPA2)
+- 📡 Crack captured handshakes
+- 📴 Deauthentication (DoS) attacks
+- 🎣 Honeypot attacks
+- 🔎 WPS PIN Brute Force
+- 🎧 Packet sniffing & traffic capture
+- 🌐 Network & device scanning
+- 🧠 Modular and interactive command-line interface
 
-Capture Handshake.
+---
 
-Honeypot attack.
+## 🖼️ Screenshot of the WiFisploit
 
-DoS attack.
+![WiFisploit](WiFisploit.png)
 
-Crack handshake.
-
-WPS attack.
-
-Discover network.
-
-Usage:
-Run the script with appropriate permissions (usually root) and follow the on-screen prompts to select your target and attack method.
-
-Disclaimer: Use this tool responsibly and only on networks you own or have explicit permission to test. Unauthorized access or attacks on networks are illegal.
-
-### Update:
-```
+## Update your system
 apt update && apt full-upgrade -y
-```
-### Run:
-```
+
+## 📦 Installation
+
+```bash
+git clone https://github.com/CybroZeus/WiFisploit.git
 cd WiFisploit/wsf/
 ```
-```
+
+## Run the tool
 python3 wsf.py
-```
-### Usage:
-```
- __      __ ______________ __                __          __  __
-/  \    /  \   \_   _____/|__| ____________ |  |   ____ |__|/  |_
-\   \/\/   /   ||    __)  |  |/  ___/\____ \|  |  /  _ \|  \   __|
- \        /|   ||     \   |  |\___ \ |  |_> >  |_(  <_> )  ||  |
-  \__/\  / |___|\___  /   |__/____  >|   __/|____/\____/|__||__|
-       \/           \/            \/ |__|
-WiFisploit - Wireless Hacking Framework
 
-Github: https://github.com/CybroZeus/WiFisploit
-
-Developed By CybroZeus
-
-    Command                     Description
-
-0   help                        Display help menu.
-1   clear                       Clean terminal screen.
-2   ifconfig                    Display network interface settings.
-3   iwconfig                    Display wireless network interfaces settings.
-4   kill                        Prepare your wireless adapter.
-5   start                       Start monitor mode.
-6   stop                        Stop monitor mode.
-7   modules                     Display all modules.
-8   tutorial                    Tool tutorial.
-9   install                     Install requirements.
-10  exit                        Leave the tool.
-
-There is 12 modules you can use.
-```
+⚠️ Disclaimer
+This tool is for educational purposes and authorized penetration testing only.
+Do not use on networks you don't own or have permission to test.
+The developer is not responsible for misuse.

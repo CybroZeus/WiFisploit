@@ -17,9 +17,9 @@ banner_menu = """
        \/           \/            \/ |__|
 WiFisploit - Wireless Hacking Framework
 
-Github: https://github.com/CybroZeus/WiFisploit
-
-Developed By CybroZeus
+GitHub: https://github.com/CybroZeus/WiFisploit
+Telegram: @CybroZeus
+Author: CybroZeus
 """
 
 gradient_colors = Colors.red_to_white
@@ -47,8 +47,6 @@ WiFisploit
 8   tutorial                    Tool tutorial.
 9   install                     Install requirements.
 10  exit                        Leave the tool.
-
-There is 12 modules you can use.
 """
             print(Colorate.Horizontal(gradient_colors, help_text))
 
