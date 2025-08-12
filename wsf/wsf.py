@@ -9,12 +9,17 @@ if os.geteuid() != 0:
     sys.exit(1)
 
 banner_menu = """
- __      __ ______________ __                __          __  __
-/  \    /  \   \_   _____/|__| ____________ |  |   ____ |__|/  |_
-\   \/\/   /   ||    __)  |  |/  ___/\____ \|  |  /  _ \|  \   __|
- \        /|   ||     \   |  |\___ \ |  |_> >  |_(  <_> )  ||  |
-  \__/\  / |___|\___  /   |__/____  >|   __/|____/\____/|__||__|
-       \/           \/            \/ |__|
+
+ ▄█     █▄   ▄█     ▄████████  ▄█     ▄████████    ▄███████▄  ▄█        ▄██████▄   ▄█      ███
+███     ███ ███    ███    ███ ███    ███    ███   ███    ███ ███       ███    ███ ███  ▀█████████▄
+███     ███ ███▌   ███    █▀  ███▌   ███    █▀    ███    ███ ███       ███    ███ ███▌    ▀███▀▀██
+███     ███ ███▌  ▄███▄▄▄     ███▌   ███          ███    ███ ███       ███    ███ ███▌     ███   ▀
+███     ███ ███▌ ▀▀███▀▀▀     ███▌ ▀███████████ ▀█████████▀  ███       ███    ███ ███▌     ███
+███     ███ ███    ███        ███           ███   ███        ███       ███    ███ ███      ███
+███ ▄█▄ ███ ███    ███        ███     ▄█    ███   ███        ███▌    ▄ ███    ███ ███      ███
+ ▀███▀███▀  █▀     ███        █▀    ▄████████▀   ▄████▀      █████▄▄██  ▀██████▀  █▀      ▄████▀
+                                                             ▀
+
 WiFisploit - Wireless Hacking Framework
 
 GitHub: https://github.com/CybroZeus/WiFisploit
@@ -63,10 +68,10 @@ WiFisploit
             os.system("airmon-ng check kill")
             os.system("systemctl restart NetworkManager")
 
-        elif cmd.startswith("start "):
+        elif cmd.startswith("start"):
             os.system(f"airmon-ng start {cmd[6:]}")
 
-        elif cmd.startswith("stop "):
+        elif cmd.startswith("stop"):
             os.system(f"airmon-ng stop {cmd[5:]}")
 
         elif cmd.lower() == "modules":

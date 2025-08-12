@@ -1,0 +1,7 @@
+threading
+colorama
+platform
+pystyle
+chardet
+socket
+color
