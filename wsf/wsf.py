@@ -141,7 +141,7 @@ WiFisploit Modules
 4   modules/scanners/net_discover               Scanning with netdiscover
 5   modules/captures/capture_traffic            Capturing traffic on network
 6   modules/captures/capture_handshake          Capturing 4-way handshake
-7   modules/captures/arpscan                    ARP scan (arp-scan wrapper)
+7   modules/scanners/arpscan                    ARP scan (arp-scan wrapper)
 8   modules/captures/tcpdump                    Tcpdump wrapper/Packet captures
 9   modules/attacks/brute_force                 Wi-Fi Brute Force without wordlist
 10  modules/attacks/crack_handshake             Cracking handshake with wordlist
