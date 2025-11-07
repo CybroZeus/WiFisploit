@@ -177,7 +177,7 @@ WiFisploit Modules
             os.system("python3 modules/captures/capture_handshake.py")
 
         elif cmd.lower() == "use arpscan" or cmd.lower() == "use 7":
-            os.system("python3 modules/captures/arpscan.py")
+            os.system("python3 modules/scanners/arpscan.py")
 
         elif cmd.lower() == "use tcpdump" or cmd.lower() == "use 8":
             os.system("python3 modules/captures/tcpdump.py")
