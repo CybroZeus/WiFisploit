@@ -4,7 +4,7 @@
 # Telegram Channel: https://t.me/wannacryzero
 # GitHub: https://github.com/CybroZeus
 # Telegram: https://t.me/CybroZeus
-# Author: CybroZeus
+# Developer: CybroZeus
 
 import os
 import sys
@@ -12,9 +12,20 @@ import time
 import platform
 import subprocess
 from pystyle import *
+from colorama import *
+
+init(autoreset=True)
 
 gradient_colors = Colors.red_to_white
 
+def set_title(title):
+    if platform.system() == "Windows":
+        os.system(f"title {title}")
+    else:
+        sys.stdout.write(f"\033]0;{title}\007")
+        sys.stdout.flush()
+
+set_title("WiFisploit")
 
 def clear_screen():
     os.system("cls" if platform.system() == "Windows" else "clear")
@@ -24,14 +35,14 @@ clear_screen()
 def root_check():
     try:
         if os.geteuid() != 0:
-            print(Colorate.Horizontal(gradient_colors, "[-] Please run as root!"))
+            Write.Print("[-] Please run as root!\n", gradient_colors, interval=0.03)
             sys.exit(1)
     except AttributeError:
         pass
 
 root_check()
 
-def startup(message="[*] Starting WiFisploit", duration=3.0, speed=1):
+def startup(message="[*] Starting WiFisploit", duration=3.0, speed=0.05):
     frames = ["|", "/", "-", "\\"]
     dots = ["", ".", "..", "..."]
     start = time.time()
@@ -56,6 +67,7 @@ def startup(message="[*] Starting WiFisploit", duration=3.0, speed=1):
 startup("[*] Starting WiFisploit", duration=3.0, speed=0.05)
 clear_screen()
 
+# WiFisploit
 WiFisploit = """
  ▄█     █▄   ▄█     ▄████████  ▄█     ▄████████    ▄███████▄  ▄█        ▄██████▄   ▄█      ███
 ███     ███ ███    ███    ███ ███    ███    ███   ███    ███ ███       ███    ███ ███  ▀█████████▄
@@ -66,29 +78,31 @@ WiFisploit = """
 ███ ▄█▄ ███ ███    ███        ███     ▄█    ███   ███        ███▌    ▄ ███    ███ ███      ███
  ▀███▀███▀  █▀     ███        █▀    ▄████████▀   ▄████▀      █████▄▄██  ▀██████▀  █▀      ▄████▀
                                                              ▀
-WiFisploit - Wireless Hacking Framework
+                              
+                                WiFisploit - Wireless Hacking Framework
+                            GitHub: https://github.com/CybroZeus/WiFisploit
+                                        Telegram: @CybroZeus
+                                        Developer: CybroZeus
 
-GitHub: https://github.com/CybroZeus/WiFisploit
-Telegram Channel: @wannacryzero
-Telegram: @CybroZeus
-Author: CybroZeus
-
-╔══════════════════════════╗
-║ [+] Total modules   : 19 ║
-║ [+] Scan modules    : 6  ║
-║ [+] Tools modules   : 5  ║
-║ [+] Attack modules  : 5  ║
-║ [+] Capture modules : 3  ║
-╚══════════════════════════╝
+                                    ╔══════════════════════════╗
+                                    ║ [+] Total modules   : 18 ║
+                                    ║ [+] Scan modules    : 6  ║
+                                    ║ [+] Tools modules   : 4  ║
+                                    ║ [+] Attack modules  : 5  ║
+                                    ║ [+] Capture modules : 3  ║
+                                    ╚══════════════════════════╝
 """
 
 print(Colorate.Horizontal(gradient_colors, WiFisploit))
 
 while True:
     try:
-        cmd = input(Colorate.Horizontal(gradient_colors, "\nwsf > "))
+        print(f"{Fore.RED}\033[4mwsf >\033[0m{Fore.RESET} ", end="")
+        cmd = input()
+
         if not cmd:
             continue
+
         if cmd.lower() == "help":
             help = """
 WiFisploit Help
@@ -130,18 +144,14 @@ WiFisploit Help
 
         elif cmd.lower() == "modules":
             modules = """
-WiFisploit Modules
-
-    Module                                      Description
-
 0   modules/scanners/scan_all                   Scanning all networks
 1   modules/scanners/scan_net                   Scanning single network
 2   modules/scanners/scan_wash                  Scanning with wash
 3   modules/scanners/scan_wps                   Scanning WPS networks
 4   modules/scanners/net_discover               Scanning with netdiscover
-5   modules/captures/capture_traffic            Capturing traffic on network
-6   modules/captures/capture_handshake          Capturing 4-way handshake
-7   modules/scanners/arpscan                    ARP scan (arp-scan wrapper)
+5   modules/scanners/arpscan                    A tool to discover devices on a network by querying IP and MAC addresses via ARP.
+6   modules/captures/capture_traffic            Capturing traffic on network
+7   modules/captures/capture_handshake          Capturing 4-way handshake
 8   modules/captures/tcpdump                    Tcpdump wrapper/Packet captures
 9   modules/attacks/brute_force                 Wi-Fi Brute Force without wordlist
 10  modules/attacks/crack_handshake             Cracking handshake with wordlist
@@ -149,12 +159,12 @@ WiFisploit Modules
 12  modules/attacks/wps_attack                  Start WPS PIN Attack
 13  modules/attacks/honeypot_attack             Start Honeypot Attack
 14  modules/tools/airgeddon                     Multi-use wireless audit bash script
-15  modules/tools/bettercap                     Swiss-army MITM/network tool (bettercap)
-16  modules/tools/wifite                        Automated wireless attack tool (wifite)
+15  modules/tools/bettercap                     Swiss-army MITM/Network tool
+16  modules/tools/wifite                        Automated wireless attack tool
 17  modules/tools/wireshark                     Network sniffer for capturing/analyzing packets
 """
             print(Colorate.Horizontal(gradient_colors, modules))
-            
+
         elif cmd.lower() == "use scan_all" or cmd.lower() == "use 0":
             os.system("python3 modules/scanners/scan_all.py")
 
@@ -170,14 +180,14 @@ WiFisploit Modules
         elif cmd.lower() == "use net_discover" or cmd.lower() == "use 4":
             os.system("python3 modules/scanners/net_discover.py")
 
-        elif cmd.lower() == "use capture_traffic" or cmd.lower() == "use 5":
+        elif cmd.lower() == "use arpscan" or cmd.lower() == "use 5":
+            os.system("python3 modules/scanners/arpscan.py")
+
+        elif cmd.lower() == "use capture_traffic" or cmd.lower() == "use 6":
             os.system("python3 modules/captures/capture_traffic.py")
 
-        elif cmd.lower() == "use capture_handshake" or cmd.lower() == "use 6":
+        elif cmd.lower() == "use capture_handshake" or cmd.lower() == "use 7":
             os.system("python3 modules/captures/capture_handshake.py")
-
-        elif cmd.lower() == "use arpscan" or cmd.lower() == "use 7":
-            os.system("python3 modules/scanners/arpscan.py")
 
         elif cmd.lower() == "use tcpdump" or cmd.lower() == "use 8":
             os.system("python3 modules/captures/tcpdump.py")
@@ -220,36 +230,37 @@ WiFisploit Modules
 ███ ▄█▄ ███ ███    ███        ███     ▄█    ███   ███        ███▌    ▄ ███    ███ ███      ███
  ▀███▀███▀  █▀     ███        █▀    ▄████████▀   ▄████▀      █████▄▄██  ▀██████▀  █▀      ▄████▀
                                                              ▀
-WiFisploit - Wireless Hacking Framework
+                              
+                                WiFisploit - Wireless Hacking Framework
+                            GitHub: https://github.com/CybroZeus/WiFisploit
+                                        Telegram: @CybroZeus
+                                        Developer: CybroZeus
 
-GitHub: https://github.com/CybroZeus/WiFisploit
-Telegram Channel: @wannacryzero
-Telegram: @CybroZeus
-Author: CybroZeus
-
-╔══════════════════════════╗
-║ [+] Total modules   : 19 ║
-║ [+] Scan modules    : 6  ║
-║ [+] Tools modules   : 5  ║
-║ [+] Attack modules  : 5  ║
-║ [+] Capture modules : 3  ║
-╚══════════════════════════╝
+                                    ╔══════════════════════════╗
+                                    ║ [+] Total modules   : 18 ║
+                                    ║ [+] Scan modules    : 6  ║
+                                    ║ [+] Tools modules   : 4  ║
+                                    ║ [+] Attack modules  : 5  ║
+                                    ║ [+] Capture modules : 3  ║
+                                    ╚══════════════════════════╝
 """
+
             print(Colorate.Horizontal(gradient_colors, banner))
 
         elif cmd.lower() == "about":
-            about = """About WiFisploit:
+            about = """
+   About WiFisploit
 ----------------------
 Description          : WiFisploit - Wireless Hacking Framework
 Version              : 2
 Programming language : Python
 Interface language   : English
-Author               : CybroZeus
+Developer            : CybroZeus
 GitHub               : https://github.com/CybroZeus/WiFisploit
-Telegram Channel     : https://t.me/wannacryzero
 Telegram             : https://t.me/CybroZeus
 """
             print(Colorate.Horizontal(gradient_colors, about))
+            print()
 
         elif cmd.lower() == "exit":
             quit()
@@ -260,7 +271,7 @@ Telegram             : https://t.me/CybroZeus
                 if ret.returncode != 0:
                     print(Colorate.Horizontal(gradient_colors, f"[!] Command exited with code {ret.returncode}"))
             except KeyboardInterrupt:
-                print(Colorate.Horizontal(gradient_colors, "\n[!] Command interrupted by user"))
+                print(Colorate.Horizontal(gradient_colors, "\n[!] Command interrupted by user."))
             except Exception as e:
                 print(Colorate.Horizontal(gradient_colors, f"[!] Failed to run command: {e}"))
     except Exception:
